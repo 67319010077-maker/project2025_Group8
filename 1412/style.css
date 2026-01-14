@@ -1,0 +1,559 @@
+/* =====================================================
+   ร้านอาหารตามสั่ง - Pink Theme CSS
+   ===================================================== */
+
+:root {
+    /* Primary Pink Colors */
+    --primary: #ec407a;
+    --primary-dark: #d81b60;
+    --primary-light: #f48fb1;
+    --primary-gradient: linear-gradient(135deg, #ec407a 0%, #d81b60 100%);
+    
+    /* Secondary Colors */
+    --secondary: #ad1457;
+    --accent: #ff4081;
+    
+    /* Background Colors */
+    --bg-main: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+    --bg-card: rgba(255, 255, 255, 0.95);
+    --bg-light: #fce4ec;
+    --bg-dark: #880e4f;
+    
+    /* Text Colors */
+    --text-dark: #1a1a2e;
+    --text-light: #666;
+    --text-muted: #999;
+    
+    /* Status Colors */
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #dc2626;
+    --info: #3b82f6;
+    
+    /* Shadows */
+    --shadow-sm: 0 4px 15px rgba(236, 64, 122, 0.1);
+    --shadow-md: 0 10px 30px rgba(236, 64, 122, 0.2);
+    --shadow-lg: 0 25px 50px rgba(236, 64, 122, 0.25);
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 25px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    background: var(--bg-main);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+/* =====================================================
+   Header
+   ===================================================== */
+.header {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(236, 64, 122, 0.3);
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+}
+
+.logo span {
+    font-size: 32px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    padding: 8px 16px;
+    border-radius: var(--radius-xl);
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* =====================================================
+   Buttons
+   ===================================================== */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background: var(--bg-light);
+    color: var(--primary);
+}
+
+.btn-danger {
+    background: #fee2e2;
+    color: var(--danger);
+}
+
+.btn-danger:hover {
+    background: var(--danger);
+    color: white;
+}
+
+/* =====================================================
+   Cards
+   ===================================================== */
+.card {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(236, 64, 122, 0.1);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.card-body {
+    padding: 24px;
+}
+
+/* =====================================================
+   Forms
+   ===================================================== */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #f8bbd9;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.3s;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(236, 64, 122, 0.1);
+}
+
+/* =====================================================
+   Hero Section
+   ===================================================== */
+.hero {
+    background: linear-gradient(135deg, #ec407a 0%, #d81b60 50%, #ad1457 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* =====================================================
+   Product Cards
+   ===================================================== */
+.product-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.product-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.product-category {
+    font-size: 12px;
+    color: var(--primary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =====================================================
+   Cart Button
+   ===================================================== */
+.cart-btn {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.cart-count {
+    background: white;
+    color: var(--primary);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+.add-to-cart {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.add-to-cart:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+.add-to-cart.added {
+    background: var(--success);
+}
+
+/* =====================================================
+   Login/Logout Buttons
+   ===================================================== */
+.login-btn {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(10px);
+}
+
+.login-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.logout-btn {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: var(--radius-xl);
+}
+
+.logout-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.user-greeting {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: var(--radius-xl);
+    font-weight: 500;
+}
+
+/* =====================================================
+   Category Buttons
+   ===================================================== */
+.category-btn {
+    padding: 10px 24px;
+    background: white;
+    border: 2px solid #f8bbd9;
+    border-radius: var(--radius-xl);
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: var(--primary-gradient);
+    color: white;
+    border-color: transparent;
+}
+
+/* =====================================================
+   Footer
+   ===================================================== */
+footer {
+    background: linear-gradient(135deg, #880e4f 0%, #4a0e32 100%);
+    color: white;
+    padding: 60px 20px;
+    margin-top: 80px;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--primary-light);
+}
+
+.footer-section p,
+.footer-section a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 1.8;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+/* =====================================================
+   Toast Notification
+   ===================================================== */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--primary);
+    color: white;
+    padding: 16px 32px;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    box-shadow: var(--shadow-lg);
+    z-index: 9999;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* =====================================================
+   Alerts
+   ===================================================== */
+.alert {
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.alert-error {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* =====================================================
+   Status Badges
+   ===================================================== */
+.status-badge {
+    padding: 6px 14px;
+    border-radius: var(--radius-xl);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.status-available {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.status-unavailable {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* =====================================================
+   Admin Sidebar
+   ===================================================== */
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #880e4f 0%, #4a0e32 100%);
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 30px 20px;
+    color: white;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.sidebar-logo span {
+    font-size: 32px;
+}
+
+.sidebar-logo h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    margin-bottom: 8px;
+    transition: all 0.3s;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.sidebar-menu a.active {
+    background: var(--primary-gradient);
+}
+
+/* =====================================================
+   Responsive
+   ===================================================== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+    
+    .nav-links {
+        gap: 10px;
+    }
+    
+    .nav-links a {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 80px;
+        padding: 20px 10px;
+    }
+    
+    .sidebar-logo h2,
+    .sidebar-menu a span {
+        display: none;
+    }
+    
+    .sidebar-menu a {
+        justify-content: center;
+    }
+    
+    .main-content {
+        margin-left: 80px;
+    }
+}
